@@ -17,17 +17,11 @@
 //   a LOGIC-LEVEL CONVERTER on the data line is STRONGLY RECOMMENDED.
 // (Skipping these may work OK on your workbench but can fail in the field)
 
-// CRC calculation as per:
-// https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/5_Mass_Flow_Meters/Sensirion_Mass_Flow_Meters_CRC_Calculation_V1.pdf
+// CRC calculation as per: https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/5_Mass_Flow_Meters/Sensirion_Mass_Flow_Meters_CRC_Calculation_V1.pdf
 
 #define POLYNOMIAL 0x31     //P(x)=x^8+x^5+x^4+1 = 100110001
-
-// Which pin on the Arduino is connected to the NeoPixels?
-// On a Trinket or Gemma we suggest changing this to 1:
-#define LED_PIN    6
-
-// How many NeoPixels are attached to the Arduino?
-#define LED_COUNT 12
+#define LED_PIN    6 // Which pin on the Arduino is connected to the NeoPixels?  On a Trinket or Gemma we suggest changing this to 1:
+#define LED_COUNT 12 // How many NeoPixels are attached to the Arduino?
 
 // Declare our NeoPixel strip object:
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
