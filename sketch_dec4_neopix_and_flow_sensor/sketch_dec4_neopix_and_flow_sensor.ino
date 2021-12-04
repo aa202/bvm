@@ -238,8 +238,10 @@ void SFM_measure(unsigned long ms_curr) {
 //      Serial.println("2");
   }
   
-  else if (vol >= 5 && vol < tvol_low_thresh && small_breath == true){
-      pixel = ceil(12*(vol/tvol_low_thresh));
+  else if ((vol >= 5) && (vol < tvol_low_thresh) && (small_breath == true)){
+      pixel = ceil(12*( (float) vol/ (float) tvol_low_thresh));
+      Serial.println("pixel:");
+      Serial.println(pixel);
       strip.setPixelColor(pixel, strip.Color(0, 0, 0)); // turns off lights one by one until lower threshold reached
       strip.show();
 //      Serial.println("3");
